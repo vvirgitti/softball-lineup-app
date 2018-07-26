@@ -9,21 +9,25 @@ class App extends Component {
       playerName: '',
       playerGender: ''
     }
-    this.handleChange = this.handleChange.bind(this)
+    this.handleNameChange = this.handleNameChange.bind(this)
+    this.handleGenderChange = this.handleGenderChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
-  handleChange(event) {
-    this.setState({
-      [event.target.name]: event.target.value
-    })
+ 
+  handleNameChange(event) {
+    this.setState({playerName: event.target.value})
+  }
+
+  handleGenderChange(event) {
+    this.setState({playerGender: event.target.value})
   }
 
   handleSubmit(e) {
     e.preventDefault()
     const playersRef = firebase.database().ref('players')
     const player = {
-      name: this.state.playerName,
-      gender: this.state.playerGender
+      playerName: this.state.playerName,
+      playerGender: this.state.playerGender
     }
     playersRef.push(player)
     this.setState({
@@ -43,8 +47,8 @@ class App extends Component {
         <div className='container'>
           <section className='add-player'>
             <form onSubmit={this.handleSubmit}>
-              <input type="text" name="playerName" placeholder="What's your name?" onChange={this.handleChange} value={this.state.playerName}/>
-              <input type="text" name="playerGender" placeholder="What's your gender?" onChange={this.handleChange} value={this.state.playerGender}/>
+              <input type="text" name="playerName" placeholder="What's your name?" onChange={this.handleNameChange} value={this.state.playerName}/>
+              <input type="text" name="playerGender" placeholder="What's your gender?" onChange={this.handleGenderChange} value={this.state.playerGender}/>
               <button>Add Player</button>
             </form>
           </section>
