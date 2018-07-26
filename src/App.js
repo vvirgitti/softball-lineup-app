@@ -47,8 +47,8 @@ class App extends Component {
         <div className='container'>
           <section className='add-player'>
             <form onSubmit={this.handleSubmit}>
-              <input type="text" name="playerName" placeholder="What's your name?" onChange={this.handleNameChange} value={this.state.playerName}/>
-              <input type="text" name="playerGender" placeholder="What's your gender?" onChange={this.handleGenderChange} value={this.state.playerGender}/>
+              <input type="text" name="playerName" placeholder="Name" onChange={this.handleNameChange} value={this.state.playerName}/>
+              <input type="text" name="playerGender" placeholder="Gender" onChange={this.handleGenderChange} value={this.state.playerGender}/>
               <button>Add Player</button>
             </form>
           </section>
