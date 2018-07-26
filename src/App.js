@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 import firebase from './firebase';
 import './App.css';
 
+const db = firebase.firestore()
+
 class App extends Component {
   constructor() {
     super()
     this.state = {
       playerName: '',
-      playerGender: ''
+      playerGender: '',
+      players: []
     }
     this.handleNameChange = this.handleNameChange.bind(this)
     this.handleGenderChange = this.handleGenderChange.bind(this)
@@ -24,17 +27,17 @@ class App extends Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    const playersRef = firebase.database().ref('players')
-    const player = {
-      playerName: this.state.playerName,
-      playerGender: this.state.playerGender
-    }
-    playersRef.push(player)
+    const playerRef = db.collection('players').doc(this.state.playerName)
+    playerRef.set({
+      gender: this.state.playerGender
+    })
+    console.log('Player added', this.state.playerName)
     this.setState({
       playerName: '',
       playerGender: ''
     })
   }
+
 
   render() {
     return (
