@@ -2,11 +2,11 @@
 
 Simple softball app to create lineups based on stats from Google Sheet.
 
-[x] Create player
-[] Save player in Google Firebase DB
-[] Read stats from Google Sheet
-[] Save stats for each player in Google Firebase DB
-[] Create lineup
+- [x] Create player
+- [] Save player in Google Firebase DB
+- [] Read stats from Google Sheet
+- [] Save stats for each player in Google Firebase DB
+- [] Create lineup
 
 ## Build with
 
