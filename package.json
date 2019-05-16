@@ -15,8 +15,7 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "firebase": "^6.0.2",
-    "firebase-admin": "^7.3.0"
+    "firebase": "^6.0.2"
   },
   "browserslist": {
     "production": [
