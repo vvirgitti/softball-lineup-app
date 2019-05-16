@@ -47,57 +47,40 @@ class App extends Component {
         <div className="wrapper">
           <h1>Softball Lineup App</h1>
         </div>
-        </header>
+      </header>
         <div className="container">
-          {/* <section className='add-player'>
-            <form onSubmit={this.handleSubmit}>
-              <input type="text" name="playerName" placeholder="Name" onChange={this.handleNameChange} value={this.state.playerName}/>
-              <input type="text" name="playerGender" placeholder="Gender" onChange={this.handleGenderChange} value={this.state.playerGender}/>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="female" value="female" />
-                <label class="form-check-label" for="female">Female</label>
+          <div class="row">
+            <div class="col-sm">
+              <div class="card">
+                <div class="card-header">
+                  <strong>Add Player</strong>
               </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="male" value="male" />
-                <label class="form-check-label" for="male">Male</label>
+              <div class="card-body">
+                <form onSubmit={this.handleSubmit}>
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="player-name" placeholder="Enter name" onChange={this.handleNameChange} value={this.state.playerName}/>
+                      <div class="radio-button-group">
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="male" id="gender-male" value="male" onChange={this.handleGenderChange} checked={this.state.playerGender === 'male'} />
+                          <label class="form-check-label" for="male">Male</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="female" id="gender-female" value="female" onChange={this.handleGenderChange} checked={this.state.playerGender === 'female'} />
+                          <label class="form-check-label" for="female">Female</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="non-binary" id="gender-non-binary" value="non-binary" onChange={this.handleGenderChange} checked={this.state.playerGender === 'non-binary'} />
+                          <label class="form-check-label" for="non-binary">Non binary</label>
+                        </div>
+                      </div>
+                  </div>
+                </form>
+                <button type="button" class="btn btn-primary float-right">Add player</button>
               </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="non-binary" value="non-binary" />
-                <label class="form-check-label" for="non-binary">Non Binary</label>
               </div>
-              <button>Add Player</button>
-            </form>
-          </section> */}
-          {/* <section className='display-player'>
-            <div className='wrapper'>
-              <ul>
-              </ul>
-            </div> */}
-          {/* </section> */}
-
-          <div class="card">
-            <div class="card-header">
-              <strong>Player</strong>
             </div>
-            <div class="card-body">
-              <form>
-                <div class="form-group">
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name" />
-                  <div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
-  <label class="form-check-label" for="inlineRadio1">1</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
-  <label class="form-check-label" for="inlineRadio2">2</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" />
-  <label class="form-check-label" for="inlineRadio3">3</label>
-</div>
-                </div>
-              </form>
-            </div>
+            <div class="col-sm"></div>
+            <div class="col-sm"></div>
           </div>
         </div>
       </div>
