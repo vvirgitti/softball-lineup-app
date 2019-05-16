@@ -46,36 +46,38 @@ class App extends Component {
           </div>
         </header>
         <div className="container">
-          <div class="row">
-            <div class="col-sm">
-              <div class="card">
-                <div class="card-header">
+          <div className="row">
+            <div className="col-sm">
+              <div className="card">
+                <div className="card-header">
                   <strong>Add Player</strong>
               </div>
-              <div class="card-body">
+              <div className="card-body">
                 <form onSubmit={this.handleSubmit}>
-                  <div class="form-group">
-                    <input type="text" class="form-control" id="player-name" placeholder="Enter name" onChange={this.handleNameChange} value={this.state.playerName}/>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="male" id="gender-male" value="male" onChange={this.handleGenderChange} checked={this.state.playerGender === 'male'} />
-                      <label class="form-check-label" for="male">Male</label>
+                  <div className="form-group">
+                    <input type="text" className="form-control" id="player-name" placeholder="Enter name" onChange={this.handleNameChange} value={this.state.playerName}/>
+                    <div className="radio-button-group">
+                      <div className="form-check form-check-inline">
+                        <input className="form-check-input" type="radio" name="male" id="gender-male" value="male" onChange={this.handleGenderChange} checked={this.state.playerGender === 'male'} />
+                        <label className="form-check-label">Male</label>
+                      </div>
+                      <div className="form-check form-check-inline">
+                        <input className="form-check-input" type="radio" name="female" id="gender-female" value="female" onChange={this.handleGenderChange} checked={this.state.playerGender === 'female'} />
+                        <label className="form-check-label">Female</label>
+                      </div>
+                      <div className="form-check form-check-inline">
+                        <input className="form-check-input" type="radio" name="non-binary" id="gender-non-binary" value="non-binary" onChange={this.handleGenderChange} checked={this.state.playerGender === 'non-binary'} />
+                        <label className="form-check-label" >Non binary</label>
+                      </div>
                     </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="female" id="gender-female" value="female" onChange={this.handleGenderChange} checked={this.state.playerGender === 'female'} />
-                      <label class="form-check-label" for="female">Female</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="non-binary" id="gender-non-binary" value="non-binary" onChange={this.handleGenderChange} checked={this.state.playerGender === 'non-binary'} />
-                      <label class="form-check-label" for="non-binary">Non binary</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary float-right">Add player</button>
+                    <button type="submit" className="btn btn-primary float-right">Add player</button>
                     </div>
                 </form>
               </div>
               </div>
             </div>
-            <div class="col-sm"></div>
-            <div class="col-sm"></div>
+            <div className="col-sm"></div>
+            <div className="col-sm"></div>
           </div>
         </div>
       </div>
