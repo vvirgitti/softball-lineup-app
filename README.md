@@ -20,7 +20,7 @@ Simple softball app to create lineups based on stats from Google Sheet.
 The server will start on `http://localhost:3000`
 
 `firebase serve`
-Will show the local version to deploy
+Will show the local version to deploy on `http://localhost:5000`
 
 
 ## How to deploy it
@@ -29,3 +29,5 @@ To build the react app with the latest changes
 
 `firebase deploy`
 To deploy the changes to firebase hosting solution
+
+The hosted version of the app can be seen here: `https://softball-app-lineup.web.app/`
