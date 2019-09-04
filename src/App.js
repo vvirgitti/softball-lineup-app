@@ -5,7 +5,7 @@ import './App.css';
 class App extends Component {
   constructor() {
     super()
-    this.db = firebase.firestore().collection('players')
+    this.db = firebase.collection('players')
     this.state = {
       playerName: '',
       playerGender: '',
