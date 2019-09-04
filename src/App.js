@@ -47,7 +47,7 @@ class App extends Component {
         </header>
         <div className="container">
           <div className="row">
-            <div className="col-sm">
+            <div className="col-4">
               <div className="card">
                 <div className="card-header">
                   <strong>Add Player</strong>
@@ -76,8 +76,14 @@ class App extends Component {
               </div>
               </div>
             </div>
-            <div className="col-sm"></div>
-            <div className="col-sm"></div>
+            <div className="col-8">
+              <div className="card">
+                <div className="card-header">
+                    <strong>List of players</strong>
+                </div>
+
+              </div>
+            </div>
           </div>
         </div>
       </div>
