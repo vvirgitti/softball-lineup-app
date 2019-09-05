@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import firebase from './firebase';
 import './App.css';
+import PlayerTable from './PlayerTable'
 
 class App extends Component {
   constructor() {
@@ -14,6 +15,7 @@ class App extends Component {
     this.handleNameChange = this.handleNameChange.bind(this)
     this.handleGenderChange = this.handleGenderChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.getPlayer = this.getPlayer.bind(this)
   }
  
   handleNameChange(event) {
@@ -35,6 +37,9 @@ class App extends Component {
         playerName: '',
         playerGender: ''
       })
+    })
+    .then(() => {
+      this.getPlayer()
     })
     .catch(err => console.log('>>>>>> Error saving to DB', err))
   }
@@ -79,7 +84,7 @@ class App extends Component {
                 <div className="card-header">
                     <strong>List of players</strong>
                 </div>
-
+                  <PlayerTable />
               </div>
             </div>
           </div>
