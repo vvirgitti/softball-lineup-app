@@ -26,6 +26,7 @@ export default class PlayerTable extends React.Component {
                   <tr className="player-table" key={player.name}>
                     <td className="table-player-name">{player.name}</td>
                     <td className="table-player-gender">{player.gender}</td>
+                    <td className="table-player-stats"></td>
                   </tr>
                 ))}
               </tbody>
