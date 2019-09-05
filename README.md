@@ -30,4 +30,4 @@ To build the react app with the latest changes
 `firebase deploy`
 To deploy the changes to firebase hosting solution
 
-The hosted version of the app can be seen here: `https://softball-app-lineup.web.app/`
+The hosted version of the app can be seen here: `https://softball-app.firebaseapp.com`
