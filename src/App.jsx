@@ -11,7 +11,7 @@ const App = () => {
   const [players, setPlayers] = useState([])
 
   useEffect(() => {
-    const playerList = db.onSnapshot((querySnapshot) => {
+    db.onSnapshot((querySnapshot) => {
       var playerList = []
       querySnapshot.forEach(doc => {
         playerList.push(doc.data())
