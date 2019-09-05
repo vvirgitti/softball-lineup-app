@@ -15,7 +15,6 @@ class App extends Component {
     this.handleNameChange = this.handleNameChange.bind(this)
     this.handleGenderChange = this.handleGenderChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
-    this.getPlayer = this.getPlayer.bind(this)
   }
  
   handleNameChange(event) {
