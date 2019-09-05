@@ -35,6 +35,8 @@ const App = () => {
       gender: playerGender
     })
     .then(() => {
+      setPlayerName('')
+      setPlayerGender('')
       console.log('Player added', playerName)
     })
     .catch(err => console.log('Error saving to DB', err))
