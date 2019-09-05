@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import firebase from './firebase';
 import './App.css';
 import PlayerTable from './PlayerTable'
@@ -8,6 +8,17 @@ const db = firebase.collection('players')
 const App = () => {
   const [playerName, setPlayerName] = useState('')
   const [playerGender, setPlayerGender] = useState('')
+  const [players, setPlayers] = useState([])
+
+  useEffect(() => {
+    const playerList = db.onSnapshot((querySnapshot) => {
+      var playerList = []
+      querySnapshot.forEach(doc => {
+        playerList.push(doc.data())
+      })
+      setPlayers(playerList)
+    })
+  }, [])
 
   const handleNameChange = event => {
     setPlayerName(event.target.value)
@@ -20,12 +31,13 @@ const App = () => {
   const handleSubmit = e => {
     e.preventDefault()
     db.doc(playerName).set({
+      name: playerName,
       gender: playerGender
     })
     .then(() => {
-      console.log('>>>>>> Player added', playerName)
+      console.log('Player added', playerName)
     })
-    .catch(err => console.log('>>>>>> Error saving to DB', err))
+    .catch(err => console.log('Error saving to DB', err))
   }
   return (
     <div className="App">
@@ -47,11 +59,11 @@ const App = () => {
                   <input type="text" className="form-control" id="player-name" placeholder="Enter name" onChange={handleNameChange} value={playerName}/>
                   <div className="radio-button-group">
                     <div className="form-check form-check-inline">
-                      <input className="form-check-input" type="radio" name="male" id="gender-male" value="male" onChange={handleGenderChange} checked={playerGender === 'male'} />
+                      <input className="form-check-input" type="radio" name="Male" id="gender-male" value="Male" onChange={handleGenderChange} checked={playerGender === 'Male'} />
                       <label className="form-check-label">Male</label>
                     </div>
                     <div className="form-check form-check-inline">
-                      <input className="form-check-input" type="radio" name="female" id="gender-female" value="female" onChange={handleGenderChange} checked={playerGender === 'female'} />
+                      <input className="form-check-input" type="radio" name="Female" id="gender-female" value="Female" onChange={handleGenderChange} checked={playerGender === 'Female'} />
                       <label className="form-check-label">Female</label>
                     </div>
                   </div>
@@ -61,14 +73,7 @@ const App = () => {
             </div>
             </div>
           </div>
-          <div className="col-8">
-            <div className="card">
-              <div className="card-header">
-                  <strong>List of players</strong>
-              </div>
-                <PlayerTable />
-            </div>
-          </div>
+            <PlayerTable players={players}/>
         </div>
       </div>
     </div>
