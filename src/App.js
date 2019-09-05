@@ -26,15 +26,17 @@ class App extends Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    const playerRef = this.db.doc(this.state.playerName)
-    playerRef.set({
+    this.db.doc(this.state.playerName).set({
       gender: this.state.playerGender
     })
-    console.log('Player added', this.state.playerName)
-    this.setState({
-      playerName: '',
-      playerGender: ''
+    .then(() => {
+      console.log('>>>>>> Player added', this.state.playerName)
+      this.setState({
+        playerName: '',
+        playerGender: ''
+      })
     })
+    .catch(err => console.log('>>>>>> Error saving to DB', err))
   }
 
   render() {
@@ -64,10 +66,6 @@ class App extends Component {
                       <div className="form-check form-check-inline">
                         <input className="form-check-input" type="radio" name="female" id="gender-female" value="female" onChange={this.handleGenderChange} checked={this.state.playerGender === 'female'} />
                         <label className="form-check-label">Female</label>
-                      </div>
-                      <div className="form-check form-check-inline">
-                        <input className="form-check-input" type="radio" name="non-binary" id="gender-non-binary" value="non-binary" onChange={this.handleGenderChange} checked={this.state.playerGender === 'non-binary'} />
-                        <label className="form-check-label" >Non binary</label>
                       </div>
                     </div>
                     <button type="submit" className="btn btn-primary float-right">Add player</button>
