@@ -1,10 +1,27 @@
 import React from 'react'
+import config from './config'
 
 export default class PlayerTable extends React.Component {
+
+  componentDidMount() {
+    window.gapi.load("client", this.initClient)
+  }
+
+  initClient = () => {
+    window.gapi.client.init({
+      apiKey: config.googleSheetApiKey,
+      discoveryDocs: config.discoveryDocs
+    })
+    .then(() => {
+      load(this.onLoad)
+    })
+  }
+
   render() {
     if (this.props.players.length <= 0) {
       return null
     }
+
 
     return (
       <div className ="col-8">
