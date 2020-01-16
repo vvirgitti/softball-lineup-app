@@ -6,13 +6,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "bootstrap": "^4.3.1",
-    "firebase-admin": "^8.4.0",
-    "firebase-functions": "^3.2.0",
+    "bootstrap": "^4.4.1",
+    "firebase-admin": "^8.9.1",
+    "firebase-functions": "^3.3.0",
     "http2": "^3.3.7",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-scripts": "3.1.1"
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "3.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -21,12 +21,12 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "eslint": "^6.3.0",
+    "eslint": "^6.8.0",
     "eslint-plugin-promise": "^4.2.1",
     "firebase": "^6.5.0",
     "jquery": "^3.4.1",
-    "popper.js": "^1.15.0",
-    "typescript": "^3.6.2"
+    "popper.js": "^1.16.0",
+    "typescript": "^3.7.4"
   },
   "browserslist": {
     "production": [
