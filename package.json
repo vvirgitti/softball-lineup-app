@@ -7,12 +7,11 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.4.1",
-    "firebase-admin": "^8.9.1",
-    "firebase-functions": "^3.3.0",
-    "http2": "^3.3.7",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-scripts": "3.3.0"
+    "firebase-admin": "^8.10.0",
+    "firebase-functions": "^3.5.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -23,10 +22,8 @@
   "devDependencies": {
     "eslint": "^6.8.0",
     "eslint-plugin-promise": "^4.2.1",
-    "firebase": "^6.5.0",
-    "jquery": "^3.4.1",
-    "popper.js": "^1.16.0",
-    "typescript": "^3.7.4"
+    "firebase": "^7.12.0",
+    "jquery": "^3.4.1"
   },
   "browserslist": {
     "production": [

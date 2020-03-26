@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import firebase from './firebase';
 import './App.css';
-import PlayerTable from './PlayerTable'
+// import PlayerTable from './PlayerTable'
 
 const db = firebase.collection('players')
 
 const App = () => {
   const [playerName, setPlayerName] = useState('')
   const [playerGender, setPlayerGender] = useState('')
-  const [players, setPlayers] = useState([])
+  // const [players, setPlayers] = useState([])
 
   useEffect(() => {
     db.onSnapshot((querySnapshot) => {
@@ -16,7 +16,7 @@ const App = () => {
       querySnapshot.forEach(doc => {
         playerList.push(doc.data())
       })
-      setPlayers(playerList)
+      // setPlayers(playerList)
     })
   }, [])
 
@@ -75,7 +75,7 @@ const App = () => {
             </div>
             </div>
           </div>
-            <PlayerTable players={players}/>
+            {/* <PlayerTable players={players}/> */}
         </div>
       </div>
     </div>
